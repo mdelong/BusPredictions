@@ -1,0 +1,11 @@
+body {
+	margin: 0;
+}
+
+#predictions-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-bottom: 20px;
+}
+

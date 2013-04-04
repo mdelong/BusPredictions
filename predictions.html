@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>jQuery Mobile: Theme Download</title>
+		<link rel="stylesheet" href="css/nextbus-theme-red.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="js/script.js"></script>
+        <script>
+            $(document).on('mobileinit',function(){
+                $.mobile.selectmenu.prototype.options.nativeMenu = false;
+            });
+        </script>
+		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+	</head>
+	<body>
+		<div id="predictions" data-role="page" data-add-back-btn="true" data-back-btn-text="Back" data-theme="a">
+
+			<div data-role="header" data-position="inline">
+				<h1>Predictions</h1>
+			</div>
+
+			<div data-role="content" data-theme="a">
+                <div id="prediction-text"></div>
+                <ul id="predictions-list" data-role="listview" data-divider-theme="a" data-inset="true">
+                </ul>
+                
+                <a href="#" data-role="button" data-inline="true" onclick="getPredictionsForStop(); $('#predictions-list').listview('refresh');">Refresh Predictions</a>
+                <script>getPredictionsForStop();</script>
+			</div>
+		</div>
+	</body>
+</html>

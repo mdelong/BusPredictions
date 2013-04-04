@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>jQuery Mobile: Theme Download</title>
+		<link rel="stylesheet" href="css/nextbus-theme-red.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script>
+            $(document).on('mobileinit',function(){
+                $.mobile.selectmenu.prototype.options.nativeMenu = false;
+            });
+        </script>
+        <script src="js/script.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+	</head>
+	<body>
+		<div id="route_list" data-role="page" data-add-back-btn="true" data-back-btn-text="Back" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<h1>Route List</h1>
+			</div>
+
+			<div data-role="content" data-theme="a">
+				<p>Please select a route from one of the following options:<br></p>
+                <label for="route-list" class="select">Routes:</label>
+                <select name="route-list" id="route-list"></select>
+                
+                <label for="route-direction" class="select">Direction:</label>
+                <select name="route-direction" id="route-direction"><option>Choose one...</option></select>
+                
+				<p>Please select a stop from one of the following options:<br></p>
+                
+                <div data-role="collapsible" data-theme="a" data-content-theme="a">
+                    <h4>Stops</h4>
+                    <ul data-role="listview" id="stop-group" data-theme="a"></ul>
+                </div>
+
+                <script>
+                    buildRouteList();
+                    $('#route-list').on('change', function(){
+                        onRouteSelect(this.value);
+                    });
+                    $('#route-direction').on('change', function(){
+                        onDirectionSelect(this.value);
+                    });
+                </script>
+			</div>
+		</div>
+	</body>
+</html>
