@@ -94,7 +94,7 @@ function onRegionSelect(value) {
     var agencySelectionHTML = "";
     for (var i = 0; i < agencies.length; i++) {
         if (agencies[i].regionTitle.match(regions[value])) {
-            agencySelectionHTML += "<li><a href='route_list.html' onclick=\"selectAgency('" + agencies[i].tag + "');\">" + agencies[i].title + "</a>\n";
+            agencySelectionHTML += "<li><a href='routes.html' onclick=\"selectAgency('" + agencies[i].tag + "');\">" + agencies[i].title + "</a>\n";
         }
     }
 
