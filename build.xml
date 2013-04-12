@@ -18,7 +18,7 @@
  -->
  
 <!-- Set name to the application name: used for BAR/COD and directory on file system -->
-<project default="build" basedir="." name="NextBus">
+<project default="build" basedir="." name="BusPredictions">
 
 	<!-- Concatenation destinations -->
 	<property name="jsconcat" value="scripts.js"/>
@@ -57,7 +57,7 @@
 	- only for native builds, use device for real devices and sim for VMWare based simulators
 	- test, prod, beta to load the matching build created above
 	-->
-	<target name="build" depends="build.native.test,build.deploy.native.device.test"></target>
+	<target name="build" depends="build.native.prod,build.deploy.native.device.prod"></target>
 
 	<!-- Set the details of the device or simulator for deployment -->
 	<!-- For BB10 device -->
